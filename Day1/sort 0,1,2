@@ -1,0 +1,36 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        int low=0;
+        int mid=0;
+        int high=nums.length-1;
+        while(mid<=high){
+        
+        if(nums[mid]==0){
+            swap(nums,mid,low);
+            mid++;
+            low++;
+        }
+            else if(nums[mid]==1){
+                mid++;
+            
+        }   
+            else if(nums[mid]==2){
+               swap(nums,mid,high);
+                high--;
+            
+        }   
+        }
+    }
+    
+    private  void swap(int[] a, int i , int j){
+       int tem=a[i];
+        a[i]=a[j];
+        a[j]=tem;
+        
+    }
+}
+
+
+//tc-o(n)
+//sc-o(1)
+//use approach of dutch flag algo using three pointers
