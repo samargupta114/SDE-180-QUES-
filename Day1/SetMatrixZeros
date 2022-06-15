@@ -35,3 +35,9 @@ class Solution {
 
 //TC-N*M*(N+M)
 //SC-O(1)
+
+
+//approach - Use boolean array and mark true whichever changes to 0 .
+
+
+
