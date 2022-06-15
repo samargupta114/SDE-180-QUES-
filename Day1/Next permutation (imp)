@@ -1,0 +1,43 @@
+class Solution {
+    public void nextPermutation(int[] a) 
+    {
+        
+        if(a==null || a.length<=1){
+            return ;
+        }
+        int i=a.length-2;
+        
+        while(i>=0 && a[i]>=a[i+1]){
+            i--;
+        }
+        if(i>=0){
+            int j=a.length-1;
+            while(j>=0 && a[j]<=a[i]){
+                j--;
+            }
+            swap(a,i,j);
+        }
+        reverse(a,i+1,a.length-1);
+    }
+    
+    private void reverse(int[] a, int m, int n){
+        while(m<n){
+            swap(a,m++,n--);
+        }
+    }
+    
+    private void swap(int a[], int i, int j ){
+        int temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+}
+
+
+//tc-o(n)+o(n)+o(n) ~o(n)
+//sc-o(1)
+
+
+//brute -find all permutation , after that find linearly desired permut
+
+//optimal -Intuition lies behind the lexicographical ordering of all possible permutations of a given array. There will always be an increasing sequence of all possible permutations when observed.
