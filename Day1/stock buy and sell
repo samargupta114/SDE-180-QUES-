@@ -1,0 +1,23 @@
+class Solution {
+    public int maxProfit(int[] p) { 
+        int profit=0;
+        int min=Integer.MAX_VALUE;
+        for(int i=0;i<p.length;i++){
+            if(min>p[i]){
+                min=p[i];
+            }
+            else if(p[i]>min && profit <p[i]-min){
+                profit=p[i]-min;
+            }            
+        }
+        return profit;
+    }
+}
+
+//tc-o(n)
+//sc-o(1)
+
+//approach-take profit as zero and min as infiinty and traverse while maximising the profit and chossing the min always
+
+
+
